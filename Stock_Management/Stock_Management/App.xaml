@@ -1,0 +1,60 @@
+﻿<Application x:Class="Stock_Management.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Stock_Management"
+             xmlns:fa="http://schemas.fontawesome.io/icons/" 
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style x:Key="ButtonRound" TargetType="Button">
+            <Setter Property="Background" Value="AliceBlue"></Setter>
+
+            <Setter Property="Foreground" Value="DarkCyan"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="5" Background="{TemplateBinding Background}" BorderThickness="0.5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"></ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="textHint" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="Grid.Column" Value="1"></Setter>
+            <Setter Property="Panel.ZIndex" Value="1"></Setter>
+            <Setter Property="Margin" Value="10 0 0 0"></Setter>
+            <Setter Property="Foreground" Value="RoyalBlue"> </Setter>
+            <Setter Property="Padding" Value="10"></Setter>
+        </Style>
+
+
+        <Style x:Key="textBox" TargetType="Control">
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="Grid.Column" Value="1"></Setter>
+            <Setter Property="Margin" Value="10 0 0 0"></Setter>
+            <Setter Property="Foreground" Value="RoyalBlue"></Setter>
+            <Setter Property="BorderBrush" Value="Transparent"></Setter>
+            <Setter Property="Padding" Value="10"></Setter>
+        </Style>
+
+        <LinearGradientBrush x:Key="CustomGradientBrush" StartPoint="0,0" EndPoint="1,2">
+            <GradientStop Color="DarkCyan" Offset="0.0"></GradientStop>
+            <GradientStop Color="SkyBlue" Offset="0.5"></GradientStop>
+        </LinearGradientBrush>
+        
+        <Style x:Key="FontAwesomeStyle" TargetType="{x:Type fa:ImageAwesome}">
+            <Setter Property="Foreground" Value="{StaticResource CustomGradientBrush}"/>
+        </Style>
+
+        <LinearGradientBrush x:Key="CustomGradientBGBrush" StartPoint="0,0" EndPoint="1,2">
+            <GradientStop Color="#141e30  " Offset="0.0"></GradientStop>
+            <GradientStop Color="#243b55 " Offset="0.75"></GradientStop>
+        </LinearGradientBrush>
+
+        <Style x:Key="BackGroundStyle" TargetType="Border">
+            <Setter Property="BorderBrush" Value="{StaticResource CustomGradientBGBrush}"></Setter>
+            <Setter Property="Background" Value="{StaticResource CustomGradientBGBrush}"></Setter>
+        </Style>
+    </Application.Resources>
+</Application>
